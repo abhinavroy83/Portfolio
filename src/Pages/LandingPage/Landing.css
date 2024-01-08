@@ -1,0 +1,103 @@
+.circle {
+  position: absolute;
+  top: -300px;
+  right: -300px;
+
+  --size: 600px;
+  width: var(--size);
+  height: var(--size);
+
+  opacity: 0.2;
+  border-radius: 50%;
+  animation: scale 1000ms 0ms ease both;
+  z-index: var(--z-index-1);
+
+  @media (--bp-md) {
+    animation-delay: 2000ms;
+    animation-duration: 1000ms;
+  }
+
+  @media (--bp-lg) {
+    animation-delay: 1250ms;
+    animation-duration: 1000ms;
+    top: -320px;
+    right: -250px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: center;
+  margin-top: 64px;
+
+  position: relative;
+  z-index: var(--z-index-2);
+
+  @media (--bp-md) {
+    margin-top: 0;
+    flex-direction: row;
+  }
+
+  img {
+    --size: 230px;
+    width: var(--size);
+    height: var(--size);
+    object-fit: cover;
+    border-radius: 100%;
+
+    animation: fade-in 250ms 100ms ease both;
+
+    @media (--bp-lg) {
+      --size: 320px;
+    }
+  }
+
+  .text {
+    font-family: 'Urbanist';
+    overflow: hidden;
+    white-space: nowrap;
+    /* text-align: center; */
+    /* border: 2px solid red; */
+
+    @media (--bp-md) {
+      text-align: left;
+      margin-left: 2rem;
+      padding-right: 1rem;
+    }
+
+    @media (--bp-lg) {
+      margin-left: 4rem;
+    }
+
+    h1 {
+      font-size: 5.5rem;
+      font-weight: bold;
+
+      line-height: 6rem;
+
+      animation: fade-in 250ms 100ms ease both;
+
+      @media (--bp-lg) {
+        font-size: 6rem;
+        line-height: 9rem;
+      }
+    }
+
+    p {
+      text-align: center;
+      font-size: 2rem;
+      line-height: 3.5rem;
+      font-weight: 900;
+      margin-top: -1rem;
+
+      animation: fade-in 250ms 100ms ease both;
+
+      @media (--bp-lg) {
+        font-size: 3rem;
+        line-height: 4.5rem;
+      }
+    }
+  }
+}

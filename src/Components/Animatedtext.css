@@ -1,0 +1,86 @@
+.decorative-text {
+  position: relative;
+}
+
+.decorative-text span:not(.name) {
+  display: none;
+  font-family: 'Caveat', cursive;
+  font-size: 1.25rem;
+  color: hsl(155, 96%, 85%);
+}
+
+/* Other styles... */
+
+.line-left,
+.line-right {
+  position: absolute;
+  top: -2.25rem;
+  left: 0.5rem;
+  transform: rotate(-10deg);
+}
+
+.text-left,
+.text-right {
+  animation: pop-in 500ms 1500ms ease-in-out both;
+}
+
+.text-left {
+  position: absolute;
+  top: -1rem;
+  left: -2rem;
+  --base-transform: translateY(-100%) rotate(-15deg);
+}
+
+.line-right {
+  position: absolute;
+  top: -2rem;
+  right: 0.5rem;
+}
+
+.text-right {
+  position: absolute;
+  top: -1.1rem;
+  right: -1.5rem;
+  --base-transform: translateY(-100%) rotate(15deg);
+}
+
+.name {
+  background: linear-gradient(
+    to right,
+    hsla(var(--megaman-blue-hsl), 1) 0%,
+    hsla(var(--megaman-blue-hsl), 1) 0%
+  );
+  background-size: 0% 3px;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  animation: fill-border 500ms 500ms ease forwards;
+  user-select: none;
+}
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: var(--base-transform) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: var(--base-transform) scale(1);
+  }
+}
+
+@keyframes fill-border {
+  0% {
+    background-size: 0% 3px;
+  }
+  100% {
+    background-size: 100% 3px;
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 100;
+  }
+}
+
+/* Add other keyframes and styles as needed */
